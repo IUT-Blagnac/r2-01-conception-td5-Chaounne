@@ -1,0 +1,30 @@
+@startuml
+
+hide circle
+hide empty members
+hide empty methods
+
+skinparam classAttributeIconSize 0
+
+skinparam roundcorner 5
+
+skinparam class {
+	BackgroundColor AliceBlue
+	BorderColor DarkSlateGray
+	ArrowColor Black
+	FontColor Black
+	FontSize 12
+	FontName Helvetica
+}
+
+skinparam arrow {
+    MessageAlign center
+}
+
+class Entreprise {
+    nbEmployés
+}
+
+Entreprise " - parent\n2" -- "- enfant\n1..n" Personne : "Peuvent avoir"
+
+@enduml
