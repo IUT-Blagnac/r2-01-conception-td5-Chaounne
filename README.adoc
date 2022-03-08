@@ -34,7 +34,7 @@ NOM:: PASCAL
 
 Prénom:: Cédric-Alexandre
 
-Groupe #::
+Groupe #:: 4B
 
 [%interactive]
 - [X] Enseignants
