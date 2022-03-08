@@ -1,0 +1,68 @@
+@startuml DC
+
+hide circle
+hide empty members
+hide empty methods
+
+skinparam classAttributeIconSize 0
+
+skinparam roundcorner 5
+
+skinparam class {
+	BackgroundColor AliceBlue
+	BorderColor DarkSlateGray
+	ArrowColor Black
+	FontColor Black
+	FontSize 12
+	FontName Helvetica
+}
+
+skinparam arrow {
+    MessageAlign center
+}
+
+class Entreprise {
+    nbEmployés
+	nomEnteprise
+}
+Entreprise : getNbEmploye()
+Entreprise : getNomEntreprise()
+
+
+class Artisan{
+	nomArtisan
+	salaireHoraire
+	coordonnées
+}
+Artisan : getNomArtisan()
+Artisan : getSalaireH()
+Artisan : getCoordonnees()
+
+class Chantier{
+	nomChantier
+	dateDebut
+	dateFin 
+	adresse
+}
+Chantier : getDateD()
+Chantier : getDateF()
+Chantier : getAdresse()
+Chantier : getNomChantier
+
+Payer : getPayeArtisan()
+
+Assigner : getChantierArtisan()
+Assigner : getAritsansChantier()
+
+Entreprise  "1"-- "0..n" Chantier: "Gérer" 
+Entreprise  "1"-- "1..n" Artisan: "Gérer"
+Artisan "0..n" -- "0..n"Chantier 
+(Artisan,Chantier) .. Assigner
+Entreprise -- Assigner : "Affecter"
+Entreprise"1" -- "1..n"Artisan
+(Entreprise,Artisan) ..Payer
+
+
+'Entreprise " - parent\n2" -- "- enfant\n1..n" Personne : "Peuvent avoir"
+
+@enduml

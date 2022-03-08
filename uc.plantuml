@@ -1,0 +1,25 @@
+@startuml DC 
+
+usecase a as "Gérer"
+usecase af as "Affecter"
+usecase p as "Payer"
+
+actor Entreprise 
+actor Chantier
+actor Artisan
+
+'Pour aligner les 2 acteurs :
+a -[hidden]-> p
+
+
+Entreprise -> a
+Entreprise -> p
+Entreprise -> af
+af -> Chantier
+af -> Artisan
+p -> Artisan
+a -> Artisan
+a -> Chantier
+
+
+@enduml
